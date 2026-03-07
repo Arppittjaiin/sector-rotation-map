@@ -1,0 +1,17 @@
+[project]
+name = "sector-rotation-map"
+version = "1.0.0"
+description = "NSE Sector Rotation Map — Relative Rotation Graph Dashboard"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "numpy",
+    "pandas",
+    "openalgo",
+    "pydantic",
+    "python-dotenv",
+]
+
+[project.scripts]
+serve = "uvicorn api_server:app --host 0.0.0.0 --port 8000 --reload"
