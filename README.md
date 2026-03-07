@@ -4,6 +4,8 @@ An interactive Relative Rotation Graph (RRG) dashboard for NSE sector indices, p
 
 Inspired by [@traderprad's tweet](https://x.com/traderprad/status/2029818798472053237/photo/1) on sector rotation analysis for the Indian market.
 
+![Sector Rotation Map](image/sectorrotation.png)
+
 ## What is an RRG?
 
 A Relative Rotation Graph plots securities on a four-quadrant chart based on their relative strength (RS-Ratio) and momentum (RS-Momentum) against a benchmark index. Securities rotate through four quadrants:
@@ -51,6 +53,14 @@ NIFTY, BANKNIFTY, NIFTY500, NIFTYNXT50, MIDCPNIFTY, FINNIFTY
 ## Setup & Run
 
 ```bash
+# Clone the repository
+git clone https://github.com/marketcalls/sector-rotation-map.git
+cd sector-rotation-map
+
+# Copy the sample env file and add your OpenAlgo API key
+cp .env.sample .env
+# Edit .env with your OPENALGO_API_KEY
+
 # Install dependencies
 uv sync
 
@@ -62,18 +72,12 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser.
 
 ## Configuration
 
-Set these environment variables to override defaults:
+Configure via the `.env` file (copy from `.env.sample`):
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `OPENALGO_API_KEY` | *(built-in)* | Your OpenAlgo API key |
+| `OPENALGO_API_KEY` | — | Your OpenAlgo API key |
 | `OPENALGO_HOST` | `http://127.0.0.1:5000` | OpenAlgo server URL |
-
-Example:
-
-```bash
-OPENALGO_API_KEY=your_key_here uv run python api_server.py
-```
 
 ## Features
 
