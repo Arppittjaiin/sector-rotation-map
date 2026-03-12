@@ -455,6 +455,13 @@ def serve_index():
     return FileResponse(os.path.join(_static_dir, "index.html"))
 
 
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    icon_path = os.path.join(_static_dir, "image", "sectorrotation.png")
+    if os.path.exists(icon_path):
+        return FileResponse(icon_path)
+    return ""
+
 @app.get("/{filename:path}")
 def serve_static(filename: str):
     filepath = os.path.join(_static_dir, filename)
